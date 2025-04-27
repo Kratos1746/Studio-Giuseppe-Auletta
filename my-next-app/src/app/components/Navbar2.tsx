@@ -11,24 +11,55 @@ export default function Navbar2() {
   const [show, setShow] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [atTop, setAtTop] = useState(true)
+  const [isSafari, setIsSafari] = useState(false)
+
+  useEffect(() => {
+    // Rileva Safari
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    setIsSafari(isSafariBrowser);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY
       setAtTop(currentScroll === 0)
+      
+      // Aggiungi una soglia minima per considerarlo uno scroll significativo
+      if (Math.abs(currentScroll - lastScrollY) < 5) {
+        return;
+      }
 
       if (currentScroll > lastScrollY) {
+        // Scrolling verso il basso
         setShow(false)
       } else {
+        // Scrolling verso l'alto
         setShow(true)
+        
+        // Fix specifico per Safari mobile
+        if (isSafari) {
+          setTimeout(() => setShow(true), 10);
+        }
       }
 
       setLastScrollY(currentScroll)
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+    // Usa un throttle per limitare la frequenza di chiamata
+    let ticking = false;
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", scrollListener)
+    return () => window.removeEventListener("scroll", scrollListener)
+  }, [lastScrollY, isSafari])
 
   const navLinks = [
     { label: 'Home', href: '/' },
