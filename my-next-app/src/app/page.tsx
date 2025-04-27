@@ -26,7 +26,7 @@ export default function HomePage() {
       <Navbar />
         <section className="relative bg-black flex flex-col items-center justify-center gap-10 min-h-screen py-20 overflow-hidden ">
           <div
-            className="absolute inset-0 bg-center bg-cover bg-fixed brightness-60 blur-sm"
+            className="absolute inset-0 bg-center bg-cover bg-fixed brightness-60 "
             style={{ backgroundImage: "url('/img/sfondo-homeb.jpg')" }}
           ></div>
 
