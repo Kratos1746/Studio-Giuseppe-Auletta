@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabaseClient'
 import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 
+
 const Navbar2 = dynamic(() => import('../components/Navbar2'), { ssr: false })
 
 type Post = {
