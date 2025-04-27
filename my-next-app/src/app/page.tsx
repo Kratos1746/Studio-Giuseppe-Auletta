@@ -75,7 +75,12 @@ export default function HomePage() {
             La mia passione per il <b>Diritto del Lavoro</b> nasce dal desiderio di proteggere chi si sente <b>indifeso ed offeso</b> di fronte ad un datore di lavoro che <u>non ascolta le esigenze dei suoi dipendenti</u> o a situazioni ingiuste. Ogni lavoratore merita di far valere i propri diritti, e per questo mi impegno con uno studio rigoroso e una profonda attenzione alle esigenze concrete di chi cerca una difesa solida e personalizzata. <br /><br />Mi sono dedicato anche al <b>Diritto Immobiliare</b>, con un’attenzione particolare al <b>Condominio</b>, perché credo che la casa e gli spazi comuni siano un cardine della serenità quotidiana. Quando <u>insorgono infiltrazioni, liti tra vicini o incomprensioni sulle spese,</u> il <b>rischio di tensioni gravi è alto.</b> Per questo, mi impegno a prevenire e risolvere queste situazioni in modo mirato, restituendo serenità e certezze a chi vive o investe in un immobile.
           </p>
           <h3 className="text-3xl text-center font-medium font-titolo text-blue-950 my-8">Hai bisogno di un consulto per una tua pratica?</h3>
-          <button className='px-4 mb-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
+          <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }} className='px-4 mb-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
             Scrivimi su WhatsApp per un primo confronto
           </button>
         </section>
@@ -105,7 +110,12 @@ export default function HomePage() {
           </p>
           <div className='flex flex-row justify-between '>
           <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-sm">Scopri chi sono →</Link>
-          <button className='px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
+          <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }} className='px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
           </div>
         </div>
       </section>
@@ -139,7 +149,12 @@ export default function HomePage() {
         </div>
         <div className="text-center mt-16">
         <h3 className="text-3xl font-medium font-titolo text-blue-950 my-8">Hai bisogno di un consulto per una tua causa?</h3>
-        <button className='px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>Scrivimi su WhatsApp per un primo confronto</button>
+        <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }} className='px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>Scrivimi su WhatsApp per un primo confronto</button>
         </div>
       </section>
 

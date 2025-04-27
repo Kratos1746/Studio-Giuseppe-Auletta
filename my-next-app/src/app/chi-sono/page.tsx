@@ -97,7 +97,12 @@ export default function ChiSono() {
       </section>
       <div className="text-center mb-24">
         <h3 className="text-3xl font-medium  font-titolo text-blue-950 my-8">Hai bisogno di un consulto per una tua causa?</h3>
-        <button className='px-4 mb-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
+        <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }}className='px-4 mb-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
             Scrivimi su WhatsApp per un primo confronto
         </button>        
       </div>

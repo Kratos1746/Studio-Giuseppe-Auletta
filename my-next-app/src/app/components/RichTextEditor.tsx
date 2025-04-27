@@ -65,22 +65,131 @@ export default function RichTextEditor({
 
   if (!isClient || !editor) return <div>Caricamento editor...</div>
 
+  // Funzione che previene l'invio del form
+  const handleButtonClick = (callback: () => void) => (e: React.MouseEvent) => {
+    e.preventDefault(); // Previene l'invio del form
+    callback();
+  };
+
   return (
     <div className="border rounded-lg shadow bg-white p-4">
       <div className="sticky top-0 z-10 bg-white flex flex-wrap gap-2 border-b pb-3 mb-4 items-center">
-        <button onClick={() => editor.chain().focus().toggleBold().run()} className={editor.isActive('bold') ? 'btn-active' : 'btn'}>B</button>
-        <button onClick={() => editor.chain().focus().toggleItalic().run()} className={editor.isActive('italic') ? 'btn-active' : 'btn'}><i>I</i></button>
-        <button onClick={() => editor.chain().focus().toggleUnderline().run()} className={editor.isActive('underline') ? 'btn-active' : 'btn'}><u>U</u></button>
-        <button onClick={() => editor.chain().focus().toggleHighlight().run()} className={editor.isActive('highlight') ? 'btn-active' : 'btn'}>Highlight</button>
-        <button onClick={() => editor.chain().focus().toggleBulletList().run()} className={editor.isActive('bulletList') ? 'btn-active' : 'btn'}>• List</button>
-        <button onClick={() => editor.chain().focus().toggleOrderedList().run()} className={editor.isActive('orderedList') ? 'btn-active' : 'btn'}>1. List</button>
-        <button onClick={() => {
-          const url = prompt('Inserisci URL')
-          if (url) editor.chain().focus().setLink({ href: url }).run()
-        }} className={editor.isActive('link') ? 'btn-active' : 'btn'}>Link</button>
-        <button onClick={() => editor.chain().focus().undo().run()} className="btn">↺</button>
-        <button onClick={() => editor.chain().focus().redo().run()} className="btn">↻</button>
-        <select onChange={(e) => editor.chain().focus().setFontSize(e.target.value).run()} className="ml-2 p-1 border rounded">
+        <button 
+          type="button" // Specifico che è un bottone generico, non un submit
+          onClick={handleButtonClick(() => editor.chain().focus().toggleBold().run())} 
+          className={editor.isActive('bold') ? 'btn-active' : 'btn'}
+        >
+          B
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().toggleItalic().run())} 
+          className={editor.isActive('italic') ? 'btn-active' : 'btn'}
+        >
+          <i>I</i>
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().toggleUnderline().run())} 
+          className={editor.isActive('underline') ? 'btn-active' : 'btn'}
+        >
+          <u>U</u>
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().toggleHighlight().run())} 
+          className={editor.isActive('highlight') ? 'btn-active' : 'btn'}
+        >
+          Highlight
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().toggleBulletList().run())} 
+          className={editor.isActive('bulletList') ? 'btn-active' : 'btn'}
+        >
+          • List
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().toggleOrderedList().run())} 
+          className={editor.isActive('orderedList') ? 'btn-active' : 'btn'}
+        >
+          1. List
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => {
+            const url = prompt('Inserisci URL')
+            if (url) editor.chain().focus().setLink({ href: url }).run()
+          })} 
+          className={editor.isActive('link') ? 'btn-active' : 'btn'}
+        >
+          Link
+        </button>
+        
+        {/* Bottoni per allineamento testo */}
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().setTextAlign('left').run())} 
+          className={editor.isActive({ textAlign: 'left' }) ? 'btn-active' : 'btn'}
+          title="Allinea a sinistra"
+        >
+          ⇤
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().setTextAlign('center').run())} 
+          className={editor.isActive({ textAlign: 'center' }) ? 'btn-active' : 'btn'}
+          title="Centra"
+        >
+          ⇔
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().setTextAlign('right').run())} 
+          className={editor.isActive({ textAlign: 'right' }) ? 'btn-active' : 'btn'}
+          title="Allinea a destra"
+        >
+          ⇥
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().setTextAlign('justify').run())} 
+          className={editor.isActive({ textAlign: 'justify' }) ? 'btn-active' : 'btn'}
+          title="Giustifica"
+        >
+          ⇆
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().undo().run())} 
+          className="btn"
+        >
+          ↺
+        </button>
+        
+        <button 
+          type="button"
+          onClick={handleButtonClick(() => editor.chain().focus().redo().run())} 
+          className="btn"
+        >
+          ↻
+        </button>
+        
+        <select 
+          onChange={(e) => editor.chain().focus().setFontSize(e.target.value).run()} 
+          className="ml-2 p-1 border rounded"
+        >
           <option value="12px">12</option>
           <option value="14px">14</option>
           <option value="16px">16</option>
@@ -90,7 +199,6 @@ export default function RichTextEditor({
           <option value="38px">38</option>
           <option value="42px">42</option>
         </select>
-        
       </div>
 
       <EditorContent editor={editor} />
@@ -107,6 +215,7 @@ export default function RichTextEditor({
           font-weight: 500;
           cursor: pointer;
           transition: all 0.2s;
+          border: none; /* Rimuove i bordi predefiniti dei bottoni */
         }
         .btn:hover {
           background: #e2e2e2;
@@ -115,6 +224,7 @@ export default function RichTextEditor({
           background: #2563eb;
           color: white;
           padding: 6px 10px;
+          border: none; /* Rimuove i bordi predefiniti dei bottoni */
         }
       `}</style>
     </div>

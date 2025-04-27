@@ -93,7 +93,12 @@ export default function Navbar2() {
           </div>
 
           {/* CTA Button */}
-          <button
+          <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }}
             className={`px-1 sm:px-3 lg:ml-3 py-3 w-fit font-semibold rounded-sm shadow border-2 transition duration-300 ease-in-out
               ${isScrolled
                 ? 'border-white text-white '

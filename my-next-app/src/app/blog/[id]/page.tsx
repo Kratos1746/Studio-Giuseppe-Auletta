@@ -110,7 +110,7 @@ export default function PostDetail() {
           />
         )}
 
-        <h1 className="text-3xl font-bold my-6 font-titolo">{post.title}</h1>
+        <h1 className="text-3xl xl:text-4xl font-bold my-6 font-titolo">{post.title}</h1>
         <p className="text-sm text-gray-500 mb-1">
           Pubblicato il{' '}
           {new Date(post.created_at).toLocaleDateString('it-IT', {
@@ -124,15 +124,22 @@ export default function PostDetail() {
         </p>
 
         <div
-          className="prose  max-w-none my-8 [&>p]:my-5 text-gray-700"
+          className="prose  max-w-none my-8 [&>p]:my-10 text-gray-700"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
         
       <div className='flex justify-between items-center mt-18 gap-6'>
-        <button className='px-3 py-2 sm:px-4 sm:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
-          Richiedi consulenza
-        </button>
+      <button 
+        onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }}
+        className='px-3 py-2 sm:px-4 sm:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
+        Richiedi consulenza
+      </button>
 
         <div className="italic text-right text-xl md:text-2xl text-gray-500 my-4">
           Avv. Giuseppe Auletta
