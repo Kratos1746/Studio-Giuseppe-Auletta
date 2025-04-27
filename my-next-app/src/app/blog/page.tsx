@@ -133,7 +133,7 @@ export default function BlogPage() {
       {/* Hero + Dropdown */}
       <section className="relative h-72 bg-fixed bg-center bg-cover flex flex-col justify-center text-white bg-black mt-40">
         <div
-          className="absolute inset-0 bg-center bg-cover bg-fixed brightness-30 blur-sm"
+          className="absolute inset-0 bg-center bg-cover bg-fixed brightness-50 blur-sm"
           style={{ backgroundImage: "url('/img/blog-bg.jpg')" }}
         />
         <div className="relative z-10 px-12 lg:px-24">

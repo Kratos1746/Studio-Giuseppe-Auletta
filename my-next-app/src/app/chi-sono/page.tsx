@@ -34,7 +34,7 @@ export default function ChiSono() {
                   />
                 </div>
           <div className="xl:w-1/2 lg:max-w-5xl  bg-white bg-opacity-80 p-6 md:p-10 rounded-sm shadow-lg" data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500">
-            <h1 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-6 font-titolo tracking-wide ">
+            <h1 className="text-4xl sm:text-5xl text-center lg:text-left font-bold text-blue-900 mb-6 font-titolo tracking-wide ">
               Sono Giuseppe Auletta
             </h1>
             <p className="text-md leading-relaxed">
@@ -64,7 +64,7 @@ export default function ChiSono() {
       {/* Sezione 2 - Background e valori familiari */}
       <section className="relative z-10  mx-10 2xl:mx-18 my-16  flex flex-col-reverse xl:flex-row items-center " >
       <div className="xl:w-1/2 lg:max-w-5xl  bg-white bg-opacity-80 p-6 md:p-10 rounded-sm shadow-lg" data-aos="fade-left" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500">
-        <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6 font-titolo tracking-wide">Una famiglia a servizio dei Diritti e della Giustizia</h1>
+        <h1 className="text-3xl sm:text-4xl text-center lg:text-left font-bold text-blue-900 mb-6 font-titolo tracking-wide">Una famiglia a servizio dei Diritti e della Giustizia</h1>
         <p className="text-md leading-relaxed">
           Mio nonno, Giuseppe Giacomo Auletta, è stato uno studioso di Diritto Commerciale di fama mondiale, docente e Preside della Facoltà di Giurisprudenza di Catania, Accademico dei Lincei, Commendatore, oggi dedicatario di una via a Catania proprio nella zona del Dipartimento di Giurisprudenza e reso famoso tra gli studenti di Giurisprudenza anche dal <b>Manuale di Diritto Commerciale Auletta – Salanitro, tuttora in uso in molti Dipartimenti di Giurisprudenza ed Economia in tutta Italia.</b>
         </p>
