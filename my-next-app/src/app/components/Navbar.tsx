@@ -15,7 +15,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY
-      setAtTop(currentScroll === 0)
+      setAtTop(currentScroll < 50)
 
       if (currentScroll > lastScrollY) {
         setShow(false)

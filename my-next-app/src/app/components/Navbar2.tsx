@@ -22,7 +22,7 @@ export default function Navbar2() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY
-      setAtTop(currentScroll === 0)
+      setAtTop(currentScroll < 50)
       
       // Aggiungi una soglia minima per considerarlo uno scroll significativo
       if (Math.abs(currentScroll - lastScrollY) < 5) {
