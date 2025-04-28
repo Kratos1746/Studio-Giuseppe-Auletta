@@ -30,7 +30,7 @@ export default function HomePage() {
             style={{ backgroundImage: "url('/img/sfondo-homeb.jpg')" }}
           ></div>
 
-          <div className="relative z-10 p-6 rounded-r-xl mt-20 ">
+          <div className="relative z-10 p-6 rounded-r-xl mt-24 ">
             <h1 className="font-titolo3 font-medium text-4xl md:text-5xl xl:text-6xl  text-white pl-2 lg:pl-6 uppercase text-center text-shadow-lg/100 text-shadow-black ">
               Studio Legale Auletta Giuseppe
             </h1>
@@ -44,7 +44,7 @@ export default function HomePage() {
           <a href="#focus-section" className="z-10 mt-8 xl:mt-12 motion-preset-oscillate motion-duration-1500 scroll-smooth">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 md:w-16 md:h-16 text-white opacity-80 cursor-pointer"
+              className="h-12 w-12 md:w-14 md:h-14  text-white opacity-80 cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
