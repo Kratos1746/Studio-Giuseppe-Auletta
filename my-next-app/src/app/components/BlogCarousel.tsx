@@ -100,7 +100,7 @@ const BlogCarousel = () => {
     <section className="relative py-16 px-6 lg:px-12 my-10 overflow-hidden bg-black">
       {/* Sfondo con effetto parallax */}
       <div
-        className="absolute inset-0 bg-center bg-cover bg-fixed brightness-60  z-10"
+        className="absolute inset-0 bg-right bg-cover lg:bg-fixed brightness-60  z-10"
         style={{ backgroundImage: "url('/img/carousel-bg2.jpg')" }}
       ></div>
 
