@@ -56,7 +56,7 @@ export default function Navbar() {
         {/* Desktop Nav + CTA + Toggle */}
         <div className="flex items-center gap-x-4 min-[450px]:gap-x-8 ml-auto pr-2 min-[450px]:pr-8 font-titolo3 uppercase">
           {/* Desktop Navigation */}
-          <div className={`hidden md:block`}>
+          <div className="hidden md:block">
             <ul className="font-semibold flex flex-row space-x-8">
               {navLinks.map(({ label, href }) => {
                 const isActive = pathname === href
@@ -83,42 +83,63 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <button onClick={() => {     
-          const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
-          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-          window.open(whatsappUrl, "_blank");
-        }} className="px-1 sm:px-3 lg:ml-3 py-3 w-fit  font-semibold  rounded-sm shadow border-2 border-white text-white hover:scale-105 transition ease-in-out duration-300 cursor-pointer">
+            const phoneNumber = "393283744899";        
+            const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, "_blank");
+          }}
+          className="px-1 sm:px-3 lg:ml-3 py-3 w-fit font-semibold rounded-sm shadow border-2 border-white text-white hover:scale-105 transition ease-in-out duration-300 cursor-pointer">
             CONTATTAMI
           </button>
 
           {/* Mobile Toggle */}
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-sm md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700"
-            aria-controls="navbar-default"
-            aria-expanded={isOpen}
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-sm md:hidden focus:outline-none focus:ring-2 focus:ring-white relative"
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="sr-only">Apri il menu</span>
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
+            {/* Animated Lines */}
+            <div className="relative w-6 h-5">
+              <span
+                className={`absolute h-0.5 w-6 bg-white left-0 -top-0.5 transition-all duration-300 ${
+                  isOpen ? 'rotate-45 top-2.5' : ''
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-white left-0 top-2 transition-all duration-300 ${
+                  isOpen ? 'opacity-0' : ''
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-white left-0 bottom-0 transition-all duration-300 ${
+                  isOpen ? '-rotate-45 bottom-2' : ''
+                }`}
+              ></span>
+            </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:hidden mt-4`} id="navbar-default">
-          <ul className="font-semibold flex flex-col p-4 border border-gray-700 rounded-lg bg-gray-800">
-            {navLinks.map(({ label, href }) => {
+        <div
+          className={`w-full md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+          }`}
+          id="navbar-default"
+        >
+          <ul className="font-semibold flex flex-col p-4 border border-blue-700 rounded-lg bg-neutral-800 space-y-2">
+            {navLinks.map(({ label, href }, index) => {
               const isActive = pathname === href
               return (
-                <li key={href}>
+                <li
+                  key={href}
+                  style={{
+                    transition: 'opacity 0.5s ease, transform 0.5s ease',
+                    transitionDelay: isOpen ? `${index * 300}ms` : '0ms',
+                    transform: isOpen ? 'translateY(0)' : 'translateY(-10px)',
+                    opacity: isOpen ? 1 : 0
+                  }}
+                >
                   <Link
                     href={href}
                     className={`relative block py-2 px-3 transition-all duration-200 ${

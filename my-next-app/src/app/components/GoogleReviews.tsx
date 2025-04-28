@@ -99,7 +99,7 @@ export default function GoogleReviewsCarousel({
          
       <div className="relative z-10 p-4 mt-6 container mx-auto">
       <Link href="https://www.google.com/maps/place/Avv.+Giuseppe+Auletta+-+Studio+Legale/@37.5067681,15.0500534,475m/data=!3m1!1e3!4m8!3m7!1s0x1313fdca4090996d:0x682825f9a9b08242!8m2!3d37.5067233!4d15.0495955!9m1!1b1!16s%2Fg%2F11s7c78c2k?entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D" target='_blank' className="absolute right-5 -top-10 text-white  font-medium hover:underline motion-preset-wobble motion-duration-1500 ">scopri le recensioni →</Link>
-        <h2 className="font-titolo2 text-3xl xl:text-4xl font-medium text-center mb-12 text-white">
+        <h2 className="font-titolo2 text-2xl md:text-3xl xl:text-4xl font-medium text-center mb-12 text-white">
         Esperienze di chi ha ritrovato <u>serenità</u>
         </h2>
 

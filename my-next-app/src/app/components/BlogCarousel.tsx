@@ -93,20 +93,20 @@ const BlogCarousel = () => {
 
   const truncateContent = (content: string) => {
     if (content.length <= CONTENT_LIMIT) return content
-    return content.slice(0, CONTENT_LIMIT) + '... <span class="text-blue-600 hover:underline underline-offset-2">Leggi tutto</span>'
+    return content.slice(0, CONTENT_LIMIT) + '... <span class="text-blue-600 hover:underline underline-offset-2 text-xs">Leggi tutto</span>'
   }
 
   return (
     <section className="relative py-16 px-6 lg:px-12 my-10 overflow-hidden bg-black">
       {/* Sfondo con effetto parallax */}
       <div
-        className="absolute inset-0 bg-right bg-cover lg:bg-fixed brightness-60  z-10"
+        className="absolute inset-0 bg-right bg-cover lg:bg-fixed brightness-80  z-10"
         style={{ backgroundImage: "url('/img/carousel-bg2.jpg')" }}
       ></div>
 
       <div className="relative z-10 p-4 mt-6 container mx-auto">
       <Link href="/blog" className="absolute right-5 -top-10 text-white  font-medium hover:underline motion-preset-wobble motion-duration-1500 ">Visita il blog →</Link>
-        <h2 className="font-titolo2 text-3xl xl:text-4xl font-medium text-center mb-12 text-white">
+        <h2 className="font-titolo2 text-2xl md:text-3xl xl:text-4xl font-medium text-center mb-12 text-white">
           Hai dei dubbi sul tuo caso? <br /> <br />Leggi gli <u>Articoli di Approfondimento</u>
         </h2>
 
@@ -134,14 +134,14 @@ const BlogCarousel = () => {
                 {/* Contenuto visibile su hover (desktop) e fisso su mobile */}
                 <div className="absolute bottom-0 left-0 right-0 bg-white p-4 opacity-100 translate-y-6 group-hover:translate-y-0 z-0 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-6 lg:group-hover:translate-y-0 transition-all duration-300">
                   <div className="absolute top-0 left-0 right-0 bg-gradient-to-t from-neutral-950 to-transparent p-4 z-10 lg:group-hover:translate-y-[-100%] translate-y-[-100%] transition-all duration-300">
-                    <h3 className="font-medium font-titolo text-lg md:text-xl text-white">{post.title}</h3>
+                    <h3 className="font-medium font-titolo text-base md:text-xl text-white">{post.title}</h3>
                   </div>
-                  <span className="italic text-gray-600 block ">{post.category?.name || 'Senza categoria'}</span>
+                  <span className="italic text-gray-600 block text-xs md:text-sm ">{post.category?.name || 'Senza categoria'}</span>
                   <div
-                    className="text-gray-700 text-sm mt-2"
+                    className="text-gray-700 text-xs md:text-sm mt-2"
                     dangerouslySetInnerHTML={{ __html: truncateContent(post.content) }}
                   />
-                  <div className="text-xs py-3 text-gray-500">
+                  <div className="text-xs py-4 text-gray-500 float-right">
                     {new Date(post.created_at).toLocaleDateString('it-IT', {
                       year: 'numeric',
                       month: 'short',

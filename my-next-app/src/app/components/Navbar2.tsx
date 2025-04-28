@@ -142,48 +142,62 @@ export default function Navbar2() {
           {/* Mobile Toggle */}
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-sm md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700"
-            aria-controls="navbar-default"
-            aria-expanded={isOpen}
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-sm md:hidden focus:outline-none focus:ring-2 focus:ring-blue-800 relative"
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="sr-only">Apri il menu</span>
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
+            {/* Animated Lines */}
+            <div className="relative w-6 h-5">
+              <span
+                className={`absolute h-0.5 w-6 bg-blue-800 left-0 -top-0.5 transition-all duration-300 ${
+                  isOpen ? 'rotate-45 top-2.5' : ''
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-blue-800 left-0 top-2 transition-all duration-300 ${
+                  isOpen ? 'opacity-0' : ''
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-blue-800 left-0 bottom-0 transition-all duration-300 ${
+                  isOpen ? '-rotate-45 bottom-2' : ''
+                }`}
+              ></span>
+            </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:hidden mt-4`} id="navbar-default">
-          <ul className={`font-semibold flex flex-col p-4 rounded-lg ${isScrolled ? 'bg-white' : 'bg-gray-800'} border`}>
-            {navLinks.map(({ label, href }) => {
+        <div
+          className={`w-full md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+          }`}
+          id="navbar-default"
+        >
+          <ul className="font-semibold flex flex-col p-4 border border-blue-700 rounded-lg bg-white space-y-2">
+            {navLinks.map(({ label, href }, index) => {
               const isActive = pathname === href
               return (
-                <li key={href}>
+                <li
+                  key={href}
+                  style={{
+                    transition: 'opacity 0.5s ease, transform 0.5s ease',
+                    transitionDelay: isOpen ? `${index * 300}ms` : '0ms',
+                    transform: isOpen ? 'translateY(0)' : 'translateY(-10px)',
+                    opacity: isOpen ? 1 : 0
+                  }}
+                >
                   <Link
                     href={href}
                     className={`relative block py-2 px-3 transition-all duration-200 ${
-                      isScrolled
-                        ? isActive
-                          ? 'text-gray-800'
-                          : 'text-gray-500 hover:text-gray-800'
-                        : isActive
-                          ? 'text-white'
-                          : 'text-gray-300 hover:text-white'
+                      isActive ? 'text-blue-800' : 'text-gray-800 hover:text-blue-800'
                     } group`}
                   >
                     {label}
                     <span
-                      className={`absolute left-0 bottom-0 h-0.5 transition-all duration-300 ${
-                        isScrolled ? 'bg-gray-800' : 'bg-white'
-                      } ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                      className={`absolute left-0 bottom-0 h-0.5 bg-blue-800 transition-all duration-300 ${
+                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
                     />
                   </Link>
                 </li>

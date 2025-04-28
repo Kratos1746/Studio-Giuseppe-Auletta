@@ -80,7 +80,7 @@ export default function HomePage() {
           const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
-        }} className='px-4 mb-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
+        }} className='px-2 lg:px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
             Scrivimi su WhatsApp per un primo confronto
           </button>
         </section>
@@ -101,7 +101,25 @@ export default function HomePage() {
 
           />
         </div>
-        <div className="lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md flex flex-col justify-between" data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
+        <div className="hidden lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md lg:flex flex-col justify-between " data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
+          <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
+          <p className="text-gray-700 mb-6 ">
+            Avvocato civile specializzato in <b>Diritto del Lavoro, Immobili e Condomini a Catania ed Enna.</b> <br /><br />
+            Dal 2011, all’età di 28 anni, ho intrapreso ufficialmente la mia carriera da Avvocato Civilista. Nel 2022 ho conseguito anche l’abilitazione alle difese in Cassazione. <br /><br />
+            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, inquilini e affittuari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, e non offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone a risolvere problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
+          </p>
+          <div className='flex flex-row justify-between '>
+          <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm">Scopri chi sono →</Link>
+          <button onClick={() => {     
+          const phoneNumber = "393283744899";        
+          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+          window.open(whatsappUrl, "_blank");
+        }} className='px-2 py-2 lg:px-4 lg:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
+          </div>
+        </div>
+
+        <div className=" lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md flex flex-col justify-between lg:hidden " data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
           <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
           <p className="text-gray-700 mb-6 ">
             Avvocato civile specializzato in <b>Diritto del Lavoro, Immobili e Condomini a Catania ed Enna.</b> <br /><br />
@@ -154,7 +172,7 @@ export default function HomePage() {
           const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
-        }} className='px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>Scrivimi su WhatsApp per un primo confronto</button>
+        }} className='px-2 lg:px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>Scrivimi su WhatsApp per un primo confronto</button>
         </div>
       </section>
 
