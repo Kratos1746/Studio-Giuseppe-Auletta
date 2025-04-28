@@ -41,7 +41,7 @@ export default function HomePage() {
               Avvocato Civile specializzato in Diritto del Lavoro, Immobili e Condomini a Catania ed Enna
             </p>
           </div>
-          <a href="#focus-section" className="z-10 mt-12 lg:mt-24 motion-preset-oscillate motion-duration-1500 scroll-smooth">
+          <a href="#focus-section" className="z-10 mt-8 xl:mt-12 motion-preset-oscillate motion-duration-1500 scroll-smooth">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 md:w-16 md:h-16 text-white opacity-80 cursor-pointer"
@@ -60,7 +60,7 @@ export default function HomePage() {
 
         <section id="focus-section" className='flex flex-col justify-center items-center gap-8 my-10   px-7 lg:px-32  '>
         <div className='py-8 '>
-          <h1 className="font-titolo3 text-3xl md:text-4xl xl:text-5xl font-medium text-blue-900 text-center ">
+          <h1 className="font-titolo3 text-3xl md:text-4xl 2xl:text-5xl font-medium text-blue-900 text-center ">
           Non ho mai creduto nei tuttologi: credo, piuttosto, nell’efficacia di un lavoro focalizzato, studiato, costruito su basi solide. Solo così si può davvero fare la differenza.
           </h1>
         </div>
@@ -127,7 +127,7 @@ export default function HomePage() {
             La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, inquilini e affittuari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, e non offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone a risolvere problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
           </p>
           <div className='flex flex-row justify-between '>
-          <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm">Scopri chi sono →</Link>
+          <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm ">Scopri chi sono →</Link>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
           const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");

@@ -124,47 +124,53 @@ export default function Navbar2() {
           </div>
 
           {/* CTA Button */}
-          <button onClick={() => {     
-          const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
-          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-          window.open(whatsappUrl, "_blank");
-        }}
-            className={`px-1 sm:px-3 lg:ml-3 py-3 w-fit font-semibold rounded-sm shadow border-2 transition duration-300 ease-in-out
-              ${isScrolled
-                ? 'border-white text-white '
-                : 'border-blue-800 text-blue-800 hover:text-blue-700'
-              } hover:scale-105 cursor-pointer`}
-          >
-            CONTATTAMI
-          </button>
+<button
+  onClick={() => {     
+    const phoneNumber = "393283744899";        
+    const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
+  }}
+  className={`px-1 sm:px-3 lg:ml-3 py-3 w-fit font-semibold rounded-sm shadow border-2 transition duration-300 ease-in-out
+    ${isScrolled
+      ? 'border-white text-white'
+      : 'border-blue-800 text-blue-800 hover:text-blue-700'
+    } hover:scale-105 cursor-pointer`}
+>
+  CONTATTAMI
+</button>
 
-          {/* Mobile Toggle */}
-          <button
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-sm md:hidden focus:outline-none focus:ring-2 focus:ring-blue-800 relative"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className="sr-only">Apri il menu</span>
-            {/* Animated Lines */}
-            <div className="relative w-6 h-5">
-              <span
-                className={`absolute h-0.5 w-6 bg-blue-800 left-0 -top-0.5 transition-all duration-300 ${
-                  isOpen ? 'rotate-45 top-2.5' : ''
-                }`}
-              ></span>
-              <span
-                className={`absolute h-0.5 w-6 bg-blue-800 left-0 top-2 transition-all duration-300 ${
-                  isOpen ? 'opacity-0' : ''
-                }`}
-              ></span>
-              <span
-                className={`absolute h-0.5 w-6 bg-blue-800 left-0 bottom-0 transition-all duration-300 ${
-                  isOpen ? '-rotate-45 bottom-2' : ''
-                }`}
-              ></span>
-            </div>
-          </button>
+{/* Mobile Toggle */}
+<button
+  type="button"
+  className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-sm md:hidden focus:outline-none focus:ring-2 transition duration-300 ease-in-out ${
+    isScrolled
+      ? 'text-white focus:ring-white'
+      : 'text-blue-800 focus:ring-blue-800'
+  } relative`}
+  onClick={() => setIsOpen(!isOpen)}
+>
+  <span className="sr-only">Apri il menu</span>
+  {/* Animated Lines */}
+  <div className="relative w-6 h-5">
+    <span
+      className={`absolute h-0.5 w-6 left-0 -top-0.5 transition-all duration-300 ${
+        isOpen ? 'rotate-45 top-2.5' : ''
+      } ${isScrolled ? 'bg-white' : 'bg-blue-800'}`}
+    ></span>
+    <span
+      className={`absolute h-0.5 w-6 left-0 top-2 transition-all duration-300 ${
+        isOpen ? 'opacity-0' : ''
+      } ${isScrolled ? 'bg-white' : 'bg-blue-800'}`}
+    ></span>
+    <span
+      className={`absolute h-0.5 w-6 left-0 bottom-0 transition-all duration-300 ${
+        isOpen ? '-rotate-45 bottom-2' : ''
+      } ${isScrolled ? 'bg-white' : 'bg-blue-800'}`}
+    ></span>
+  </div>
+</button>
+
         </div>
 
         {/* Mobile Menu */}
