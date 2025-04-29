@@ -61,7 +61,7 @@ export default function HomePage() {
         <section id="focus-section" className='flex flex-col justify-center items-center gap-8 my-10   px-7 lg:px-32  '>
         <div className='py-8 '>
           <h1 className="font-titolo3 text-3xl md:text-4xl 2xl:text-5xl font-medium text-blue-900 text-center ">
-          Non ho mai creduto nei tuttologi: credo, piuttosto, nell’efficacia di un lavoro focalizzato, studiato, costruito su basi solide. Solo così si può davvero fare la differenza.
+          Non ho mai creduto nella tuttologia: credo, piuttosto, nell’efficacia di un lavoro focalizzato, studiato, costruito su basi solide. Solo così si può davvero fare la differenza.
           </h1>
         </div>
           <span className='absolute p-22 border-1 translate-y-[140%] -left-15 sm:-translate-y-[20%] sm:-left-15 lg:-translate-y-[35%] lg:-left-15 border-neutral-300 rounded-sm inset-shadow-sm inset-shadow-gray-600  z-0'></span>
