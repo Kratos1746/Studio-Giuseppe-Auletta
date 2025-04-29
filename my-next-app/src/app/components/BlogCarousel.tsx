@@ -107,7 +107,7 @@ const BlogCarousel = () => {
       <div className="relative z-10 p-4 mt-6 container mx-auto">
       <Link href="/blog" className="absolute right-5 -top-10 text-white  font-medium hover:underline motion-preset-wobble motion-duration-1500 ">Visita il blog →</Link>
         <h2 className="font-titolo2 text-2xl md:text-3xl xl:text-4xl font-medium text-center mb-12 text-white">
-          Hai dei dubbi sul tuo caso? <br /> <br />Leggi gli <u>Articoli di Approfondimento</u>
+          Hai dei dubbi sulla tua situazione? <br /> <br />Leggi gli <u>Articoli di Approfondimento</u>
         </h2>
 
         <Slider {...settings}>

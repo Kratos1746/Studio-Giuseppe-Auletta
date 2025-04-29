@@ -97,7 +97,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-center mt-8">
             <h3 className="text-sm font-semibold mb-2">Copyright</h3>
-            <p className="text-xs">&copy; 2018 Avv. Giuseppe Auletta. Tutti i diritti riservati.</p>
+            <p className="text-xs">&copy; 2025 Avv. Giuseppe Auletta. Tutti i diritti riservati.</p>
           </div>
         </div>
       </footer>

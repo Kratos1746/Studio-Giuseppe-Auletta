@@ -32,13 +32,13 @@ export default function HomePage() {
 
           <div className="relative z-10 p-6 rounded-r-xl mt-24 ">
             <h1 className="font-titolo3 font-medium text-4xl md:text-5xl xl:text-6xl  text-white pl-2 lg:pl-6 uppercase text-center text-shadow-lg/100 text-shadow-black ">
-              Studio Legale Auletta Giuseppe
+              Studio Legale Giuseppe Auletta 
             </h1>
           </div>
 
           <div className="relative  z-10 p-5 rounded-r-xl max-w-4xl">
             <p className="font-titolo3 text-3xl md:text-4xl xl:text-5xl  pl-2 lg:pl-6 mb-6 text-white text-center text-shadow-lg/100 text-shadow-black">
-              Avvocato Civile specializzato in Diritto del Lavoro, Immobili e Condomini a Catania ed Enna
+              Avvocato Civile esperto in Diritto del Lavoro, Condominiale e degli Immobili a Catania ed Enna
             </p>
           </div>
           <a href="#focus-section" className="z-10 mt-8 xl:mt-12 motion-preset-oscillate motion-duration-1500 scroll-smooth">
@@ -71,13 +71,13 @@ export default function HomePage() {
           <span className='absolute p-32 border-1 translate-y-[5%] right-2 sm:translate-y-[20%] sm:right-2 lg:translate-y-[20%] lg:right-10 border-neutral-400 rounded-sm z-0'></span>
           <span className='absolute p-23 border-1 translate-y-[40%] right-4 sm:translate-y-[30%] sm:right-4 lg:-translate-y-[10%] lg:right-20 border-neutral-500 rounded-sm v z-0'></span>
           <p className="text-base xl:text-lg mt-4 text-gray-700 z-20  border-2 border-neutral-600  p-10 bg-gray-200 inset-shadow-sm inset-shadow-gray-400 rounded-sm" >
-            Ecco perché decido di specializzarmi nel <b>Diritto del Lavoro</b> e <b>Diritto Immobiliare e Condominiale.</b> <br />
+            Ecco perché decido di focalizzarmi nel <b>Diritto del Lavoro</b> e <b> Diritto Condominiale e degli Immobili.</b> <br />
             La mia passione per il <b>Diritto del Lavoro</b> nasce dal desiderio di proteggere chi si sente <b>indifeso ed offeso</b> di fronte ad un datore di lavoro che <u>non ascolta le esigenze dei suoi dipendenti</u> o a situazioni ingiuste. Ogni lavoratore merita di far valere i propri diritti, e per questo mi impegno con uno studio rigoroso e una profonda attenzione alle esigenze concrete di chi cerca una difesa solida e personalizzata. <br /><br />Mi sono dedicato anche al <b>Diritto Immobiliare</b>, con un’attenzione particolare al <b>Condominio</b>, perché credo che la casa e gli spazi comuni siano un cardine della serenità quotidiana. Quando <u>insorgono infiltrazioni, liti tra vicini o incomprensioni sulle spese,</u> il <b>rischio di tensioni gravi è alto.</b> Per questo, mi impegno a prevenire e risolvere queste situazioni in modo mirato, restituendo serenità e certezze a chi vive o investe in un immobile.
           </p>
           <h3 className="text-3xl text-center font-medium font-titolo text-blue-950 my-8">Hai bisogno di un consulto per una tua pratica?</h3>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const message = encodeURIComponent("Buongiorno, vorrei contattarla per un mio caso, potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
         }} className='px-2 lg:px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>
@@ -104,15 +104,15 @@ export default function HomePage() {
         <div className="hidden lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md lg:flex flex-col justify-between " data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
           <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
           <p className="text-gray-700 mb-6 ">
-            Avvocato civile specializzato in <b>Diritto del Lavoro, Immobili e Condomini a Catania ed Enna.</b> <br /><br />
+            Avvocato civile esperto in <b>Diritto del Lavoro, Diritto Condominiale e degli Immobili a Catania ed Enna.</b> <br /><br />
             Dal 2011, all’età di 28 anni, ho intrapreso ufficialmente la mia carriera da Avvocato Civilista. Nel 2022 ho conseguito anche l’abilitazione alle difese in Cassazione. <br /><br />
-            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, inquilini e affittuari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, e non offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone a risolvere problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
+            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, condomini e proprietari immobiliari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, piuttosto che offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone ad affrontare problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
           </p>
           <div className='flex flex-row justify-between '>
           <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm">Scopri chi sono →</Link>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const message = encodeURIComponent("Buongiorno, vorrei contattarla per un mio caso, potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
         }} className='px-2 py-2 lg:px-4 lg:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
@@ -122,15 +122,15 @@ export default function HomePage() {
         <div className=" lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md flex flex-col justify-between lg:hidden " data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
           <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
           <p className="text-gray-700 mb-6 ">
-            Avvocato civile specializzato in <b>Diritto del Lavoro, Immobili e Condomini a Catania ed Enna.</b> <br /><br />
+            Avvocato civile esperto in <b>Diritto del Lavoro, Diritto Condominiale e degli Immobili a Catania ed Enna.</b> <br /><br />
             Dal 2011, all’età di 28 anni, ho intrapreso ufficialmente la mia carriera da Avvocato Civilista. Nel 2022 ho conseguito anche l’abilitazione alle difese in Cassazione. <br /><br />
-            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, inquilini e affittuari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, e non offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone a risolvere problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
+            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, condomini e proprietari immobiliari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, piuttosto che offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone ad affrontare problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
           </p>
           <div className='flex flex-row justify-between '>
           <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm ">Scopri chi sono →</Link>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const message = encodeURIComponent("Buongiorno, vorrei contattarla per un mio caso, potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
         }} className='px-2 py-2 lg:px-4 lg:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
@@ -149,27 +149,24 @@ export default function HomePage() {
       
 
       {/* Servizi Preview */}
-      <section className="py-16 px-6 max-w-screen-2xl mx-auto my-12">
+      <section className="py-16 px-6 max-w-screen-xl mx-auto my-12">
         <h2 className="font-titolo2 text-4xl font-semibold text-blue-900 mb-14 text-center">I miei servizi</h2>
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="bg-white p-8 rounded-sm shadow-md text-center" data-aos="fade-right" data-aos-delay="600" data-aos-easing="ease-in" data-aos-duration="500" >
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="bg-white p-8 rounded-sm shadow-md text-center" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in" data-aos-duration="500" >
             <h3 className="font-titolo2 text-3xl font-semibold text-blue-950 mb-8" >Immobiliare e Condominiale</h3>
-            <p className="text-gray-700 text-md">Può capitare di affrontare tensioni nel condominio: <b>infiltrazioni, divisioni delle spese, vicini rumorosi o inadempienti.</b> <br /><br /> Spesso, questi problemi si trascinano a lungo, generando <u>stress e incertezza</u> sia per i proprietari di immobili sia per gli amministratori condominiali, che devono gestire situazioni complesse, e per gli inquilini, che subiscono disagi. <br /><br />L’obiettivo comune è vivere in un ambiente sereno, dove regole chiare e rispetto reciproco <b>trasformano la casa in un autentico luogo di tranquillità.</b></p>
+            <p className="text-gray-700 text-md">Può capitare di affrontare tensioni nel condominio: <b>infiltrazioni, divisioni delle spese, vicini rumorosi o inadempienti.</b> <br /><br /> Spesso, questi problemi si trascinano a lungo, generando <u>stress e incertezza</u> sia per i proprietari di immobili sia per gli amministratori condominiali, che devono gestire situazioni complesse, e per i residenti, che subiscono disagi. <br /><br />L’obiettivo comune è vivere in un ambiente sereno, dove regole chiare e rispetto reciproco <b>trasformano la casa in un autentico luogo di tranquillità.</b></p>
           </div>
           <div className="bg-white p-8 rounded-sm shadow-md text-center" data-aos="fade-up" data-aos-delay="600" data-aos-easing="ease-in" data-aos-duration="500">
             <h3 className="font-titolo2 text-3xl font-semibold text-blue-950 mb-8">Lavoro</h3>
-            <p className="text-gray-700 text-md">Un <b>licenziamento inaspettato, un provvedimento disciplinare infondato o retribuzioni mancanti</b> possono mettere in crisi la tua stabilità e creare forti tensioni con il datore di lavoro. <br /><br />La priorità è <u>difendere i tuoi diritti e riprendere il controllo della situazione.</u> <br /> <br />In questi frangenti, ciò che desideri davvero è un ambiente di lavoro stabile e il riconoscimento dei tuoi diritti senza più compromessi o tensioni. Con il giusto supporto legale puoi tornare a concentrarti sul tuo futuro professionale, intraprendendo le azioni necessarie per <b>proteggere ciò che ti spetta e lasciandoti alle spalle l’incertezza.</b></p>
+            <p className="text-gray-700 text-md">Un <b>licenziamento inaspettato, un provvedimento disciplinare infondato, mancato riconoscimento delle giuste mansioni o retribuzioni mancanti</b> possono mettere in crisi la tua stabilità e creare forti tensioni con il datore di lavoro. <br /><br />La priorità è <u>difendere i tuoi diritti e riprendere il controllo della situazione.</u> <br /> <br />In questi frangenti, ciò che desideri davvero è un ambiente di lavoro stabile e il riconoscimento dei tuoi diritti senza più tensioni. Con il giusto supporto legale puoi tornare a concentrarti sul tuo futuro professionale, intraprendendo le azioni necessarie per <b>proteggere ciò che ti spetta e lasciandoti alle spalle l’incertezza.</b></p>
           </div>
-          <div className="bg-white p-8 rounded-sm shadow-md text-center" data-aos="fade-left" data-aos-delay="600" data-aos-easing="ease-in" data-aos-duration="500">
-            <h3 className="font-titolo2 text-3xl font-semibold text-blue-950 mb-8">Contratti</h3>
-            <p className="text-gray-700 text-md">Stipulare un contratto poco chiaro o con <b>clausole sfavorevoli può esporre a rischi di contenzioso, penali inattese o perdite economiche significative.</b> <br /><br />Troppi, purtroppo, se ne accorgono solo quando è ormai troppo tardi, rimanendo <u>imbrigliati in impegni dannosi.</u> <br /><br />Il traguardo ideale è un accordo solido, dove ogni diritto e dovere sia definito con trasparenza e tuteli le parti da future controversie. Il mio compito è guidarti nella redazione, revisione o negoziazione di contratti che proteggano pienamente i tuoi interessi, evitando spiacevoli sorprese e <b>salvaguardando il tuo investimento di tempo e risorse.</b></p>
-          </div>
+          
         </div>
         <div className="text-center mt-16">
         <h3 className="text-3xl font-medium font-titolo text-blue-950 my-8">Hai bisogno di un consulto per una tua causa?</h3>
         <button onClick={() => {     
           const phoneNumber = "393283744899";        
-          const message = encodeURIComponent("Ciao, vorrei richiedere una consulenza. Potrei avere maggiori informazioni?");
+          const message = encodeURIComponent("Buongiorno, vorrei contattarla per un mio caso, potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
         }} className='px-2 lg:px-4 py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer'>Scrivimi su WhatsApp per un primo confronto</button>
