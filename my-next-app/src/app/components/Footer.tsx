@@ -54,7 +54,7 @@ export default function Footer() {
               </p>
               <p className="mb-2">
                 <span className="font-semibold">Studio Enna:</span>
-                <a href="https://maps.app.goo.gl/fzh2ZCgVfyfN7GpAA" target="_blank" className="hover:text-blue-900"> Viale Armando Diaz 10/b</a>.
+                <a href="https://maps.app.goo.gl/fzh2ZCgVfyfN7GpAA" target="_blank" className="hover:text-blue-900"> Viale Armando Diaz 10</a>.
               </p>
             </div>
 
