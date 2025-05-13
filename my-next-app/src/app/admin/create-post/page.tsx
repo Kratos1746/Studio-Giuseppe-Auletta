@@ -13,6 +13,8 @@ export default function CreatePost() {
   const [categoryInput, setCategoryInput] = useState('')
   const [categories, setCategories] = useState<any[]>([])
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [isScheduled, setIsScheduled] = useState(false)
+  const [scheduledAt, setScheduledAt] = useState('')
 
   const router = useRouter()
 
@@ -54,10 +56,20 @@ export default function CreatePost() {
       categoryId = newCategory.id
     }
 
+    const now = new Date().toISOString()
+
     // Crea post
     const { data: post, error: postError } = await supabase
       .from('posts')
-      .insert([{ title, content, user_id: user.id, category_id: categoryId }])
+      .insert([{
+        title,
+        content,
+        user_id: user.id,
+        category_id: categoryId,
+        scheduled_at: isScheduled ? scheduledAt : null,
+        published: !isScheduled,
+        created_at: now
+      }])
       .select()
       .single()
 
@@ -91,13 +103,15 @@ export default function CreatePost() {
       }
     }
 
-    alert('Post pubblicato!')
+    alert(isScheduled ? 'Post schedulato con successo!' : 'Post pubblicato!')
     setTitle('')
     setContent('')
     setFiles(null)
     setCoverIndex(0)
     setCategoryInput('')
     setSelectedCategory('')
+    setIsScheduled(false)
+    setScheduledAt('')
     router.push(`/blog/`)
   }
 
@@ -138,6 +152,27 @@ export default function CreatePost() {
           />
         </div>
 
+        <div>
+          <label className="flex items-center gap-2 font-semibold">
+            <input
+              type="checkbox"
+              checked={isScheduled}
+              onChange={() => setIsScheduled(!isScheduled)}
+            />
+            Pianifica pubblicazione
+          </label>
+
+          {isScheduled && (
+            <input
+              type="datetime-local"
+              className="w-full p-2 border rounded mt-2"
+              value={scheduledAt}
+              onChange={(e) => setScheduledAt(e.target.value)}
+              required
+            />
+          )}
+        </div>
+
         <input
           type="file"
           accept="image/*"
@@ -163,7 +198,7 @@ export default function CreatePost() {
         )}
 
         <button className="bg-green-600 hover:bg-green-700 text-white p-2 rounded w-full">
-          Pubblica
+          {isScheduled ? 'Schedula' : 'Pubblica'}
         </button>
       </form>
     </div>

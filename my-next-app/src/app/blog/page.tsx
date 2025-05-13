@@ -116,10 +116,29 @@ export default function BlogPage() {
     return () => window.removeEventListener('resize', updatePostsPerPage)
   }, [])
 
-  const truncateContent = (content: string) => {
-    if (content.length <= CONTENT_LIMIT) return content
-    return content.slice(0, CONTENT_LIMIT) + '... <span class="text-blue-600 hover:underline underline-offset-2 text-xs">Leggi tutto</span>'
+const truncateContent = (content: string) => {
+  // Parse del contenuto HTML in un documento temporaneo
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(content, 'text/html');
+
+  // Rimuovi tutte le classi e gli stili inline
+  doc.body.querySelectorAll('*').forEach(el => {
+    el.removeAttribute('class');
+    el.removeAttribute('style');
+  });
+
+  // Ottieni solo il testo "pulito"
+  const textContent = doc.body.textContent || "";
+
+  if (textContent.length <= CONTENT_LIMIT) {
+    return textContent;
   }
+
+  const truncatedText = textContent.slice(0, CONTENT_LIMIT);
+
+  return `${truncatedText}... <span class="text-blue-600 hover:underline underline-offset-2 text-xs">Leggi tutto</span>`;
+};
+
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
