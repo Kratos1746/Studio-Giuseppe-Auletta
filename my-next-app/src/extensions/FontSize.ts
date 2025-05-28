@@ -4,6 +4,7 @@ declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     fontSize: {
       setFontSize: (fontSize: string) => ReturnType
+      unsetFontSize: () => ReturnType
     }
   }
 }
@@ -36,6 +37,9 @@ export const FontSize = Mark.create({
     return {
       setFontSize: (fontSize: string) => ({ chain }: CommandProps) => {
         return chain().setMark(this.name, { fontSize }).run()
+      },
+      unsetFontSize: () => ({ chain }: CommandProps) => {
+        return chain().unsetMark(this.name).run()
       },
     }
   },

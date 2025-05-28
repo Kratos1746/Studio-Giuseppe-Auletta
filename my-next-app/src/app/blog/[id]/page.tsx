@@ -124,9 +124,9 @@ export default function PostDetail() {
         </p>
 
         <div
-          className="prose  max-w-none my-8 [&>p]:my-10 text-gray-700"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+          className="post-content"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
 
         
       <div className='flex justify-between items-center mt-18 gap-6'>
@@ -141,9 +141,6 @@ export default function PostDetail() {
         Richiedi consulenza
       </button>
 
-        <div className="italic text-right text-xl md:text-2xl text-gray-500 my-4">
-          Avv. Giuseppe Auletta
-        </div>
       </div>
 
       </div>

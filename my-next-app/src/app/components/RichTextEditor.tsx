@@ -14,7 +14,7 @@ import TableRow from '@tiptap/extension-table-row'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import CharacterCount from '@tiptap/extension-character-count'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { FontSize } from '../../extensions/FontSize'
 
 export default function RichTextEditor({
@@ -25,9 +25,33 @@ export default function RichTextEditor({
   onChange?: (html: string) => void
 }) {
   const [isClient, setIsClient] = useState(false)
+  const [currentFontSize, setCurrentFontSize] = useState('16px')
+  const toolbarRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isToolbarFixed, setIsToolbarFixed] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
+  }, [])
+
+  // Gestione scroll per toolbar fissa
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current && toolbarRef.current) {
+        const containerRect = containerRef.current.getBoundingClientRect()
+        const toolbarHeight = toolbarRef.current.offsetHeight
+        
+        // Se il container è sopra il viewport, rendi la toolbar fissa
+        if (containerRect.top <= 0 && containerRect.bottom > toolbarHeight) {
+          setIsToolbarFixed(true)
+        } else {
+          setIsToolbarFixed(false)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const editor = useEditor({
@@ -51,31 +75,98 @@ export default function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          'min-h-[300px] border border-gray-300 p-4 rounded focus:outline-none prose max-w-none',
+          'min-h-[300px] border border-gray-300 p-4 rounded focus:outline-none  max-w-none post-content',
       },
       handlePaste(view, event, slice) {
-        // Lascia che TipTap gestisca il paste HTML
+        // Preserva la formattazione originale incluse le dimensioni dei font
         return false
       },
     },
     onUpdate({ editor }) {
       onChange?.(editor.getHTML())
+      // Aggiorna la dimensione del font corrente basata sulla selezione
+      updateCurrentFontSize()
+    },
+    onSelectionUpdate({ editor }) {
+      // Aggiorna la dimensione del font quando cambia la selezione
+      updateCurrentFontSize()
     },
   })
+
+  // Funzione per aggiornare la dimensione del font corrente
+  const updateCurrentFontSize = () => {
+    if (editor) {
+      const { from, to } = editor.state.selection
+      const node = editor.state.doc.nodeAt(from)
+      
+      if (node) {
+        const fontSize = node.marks.find(mark => mark.type.name === 'textStyle')?.attrs?.fontSize
+        if (fontSize) {
+          setCurrentFontSize(fontSize)
+        } else {
+          // Se non c'è un font size specifico, usa quello del CSS o default
+          const element = editor.view.dom.querySelector('.ProseMirror')
+          if (element) {
+            const computedStyle = window.getComputedStyle(element)
+            setCurrentFontSize(computedStyle.fontSize || '16px')
+          }
+        }
+      }
+    }
+  }
+
+  // Effetto per aggiornare il contenuto dell'editor quando initialValue cambia
+  useEffect(() => {
+    if (editor && initialValue !== editor.getHTML()) {
+      // Usa setContent con parseOptions per preservare tutti gli stili
+      editor.commands.setContent(initialValue, false, {
+        preserveWhitespace: 'full',
+      })
+      // Aggiorna la dimensione del font dopo aver caricato il contenuto
+      setTimeout(() => updateCurrentFontSize(), 100)
+    }
+  }, [editor, initialValue])
 
   if (!isClient || !editor) return <div>Caricamento editor...</div>
 
   // Funzione che previene l'invio del form
   const handleButtonClick = (callback: () => void) => (e: React.MouseEvent) => {
-    e.preventDefault(); // Previene l'invio del form
-    callback();
-  };
+    e.preventDefault()
+    callback()
+  }
+
+  // Gestione cambio dimensione font con fix del bug
+  const handleFontSizeChange = (newSize: string) => {
+    if (editor) {
+      // Forza sempre l'applicazione della nuova dimensione
+      editor.chain().focus().unsetFontSize().setFontSize(newSize).run()
+      setCurrentFontSize(newSize)
+    }
+  }
 
   return (
-    <div className="border rounded-lg shadow bg-white p-4">
-      <div className="sticky top-0 z-10 bg-white flex flex-wrap gap-2 border-b pb-3 mb-4 items-center">
+    <div ref={containerRef} className="border rounded-lg shadow bg-white p-4">
+      <div 
+        ref={toolbarRef}
+        className={`bg-white flex flex-wrap gap-2 border-b pb-3 mb-4 items-center z-50 ${
+          isToolbarFixed 
+            ? 'fixed top-0 left-0 right-0 border-b shadow-md p-4' 
+            : 'relative'
+        }`}
+        style={isToolbarFixed ? { 
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          backgroundColor: 'white',
+          borderBottom: '1px solid #e5e7eb',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          padding: '1rem'
+        } : {}}
+      >
         <button 
-          type="button" // Specifico che è un bottone generico, non un submit
+          type="button"
           onClick={handleButtonClick(() => editor.chain().focus().toggleBold().run())} 
           className={editor.isActive('bold') ? 'btn-active' : 'btn'}
         >
@@ -187,19 +278,28 @@ export default function RichTextEditor({
         </button>
         
         <select 
-          onChange={(e) => editor.chain().focus().setFontSize(e.target.value).run()} 
+          value={currentFontSize}
+          onChange={(e) => handleFontSizeChange(e.target.value)} 
           className="ml-2 p-1 border rounded"
         >
           <option value="12px">12</option>
           <option value="14px">14</option>
           <option value="16px">16</option>
           <option value="18px">18</option>
+          <option value="20px">20</option>
           <option value="24px">24</option>
+          <option value="28px">28</option>
           <option value="32px">32</option>
+          <option value="36px">36</option>
           <option value="38px">38</option>
           <option value="42px">42</option>
         </select>
       </div>
+
+      {/* Spazio di compensazione quando la toolbar è fissa */}
+      {isToolbarFixed && (
+        <div style={{ height: toolbarRef.current?.offsetHeight || 60 }} />
+      )}
 
       <EditorContent editor={editor} />
 
@@ -207,26 +307,30 @@ export default function RichTextEditor({
         {editor.storage.characterCount.characters()} caratteri
       </div>
 
-      <style jsx>{`
-        .btn {
-          padding: 6px 10px;
-          border-radius: 4px;
-          background: #f1f1f1;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s;
-          border: none; /* Rimuove i bordi predefiniti dei bottoni */
-        }
-        .btn:hover {
-          background: #e2e2e2;
-        }
-        .btn-active {
-          background: #2563eb;
-          color: white;
-          padding: 6px 10px;
-          border: none; /* Rimuove i bordi predefiniti dei bottoni */
-        }
-      `}</style>
+    <style jsx>{`
+  .btn {
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #f1f1f1;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+  .btn:hover {
+    background: #e2e2e2;
+  }
+  .btn-active {
+    background: #2563eb;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+  }
+
+ 
+`}</style>
+
     </div>
   )
 }

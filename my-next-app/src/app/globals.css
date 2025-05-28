@@ -66,3 +66,50 @@ body {
   font-weight: medium;
   font-size: 1rem;
 }
+/* styles/post.css */
+.post-content, .ProseMirror {
+
+  color: #1f2937;
+  line-height: 1.7;
+
+}
+
+.ProseMirror h1, .post-content h1,
+.ProseMirror h2, .post-content h2,
+.ProseMirror h3, .post-content h3 {
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.ProseMirror p, .post-content p {
+  margin: 1rem 0;
+}
+
+.ProseMirror ul, .post-content ul,
+.ProseMirror ol, .post-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.ProseMirror li, .post-content li {
+  margin: 0.5rem 0;
+}
+
+.ProseMirror a, .post-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+
+.ProseMirror strong, .post-content strong {
+  font-weight: 700;
+}
+.ProseMirror em, .post-content em {
+  font-style: italic;
+}
+.ProseMirror u, .post-content u {
+  text-decoration: underline;
+}
+.ProseMirror mark, .post-content mark {
+  background-color: #fef08a;
+}
