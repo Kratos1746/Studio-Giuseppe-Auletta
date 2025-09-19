@@ -103,12 +103,25 @@ export default function HomePage() {
         </div>
         <div className="hidden lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md lg:flex flex-col justify-between " data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
           <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
-          <p className="text-gray-700 mb-6 ">
-            Avvocato civile esperto in <b>Diritto del Lavoro, Diritto Condominiale e degli Immobili a Catania ed Enna.</b> <br /><br />
-            Dal 2011, all’età di 28 anni, ho intrapreso ufficialmente la mia carriera da Avvocato Civilista. Nel 2022 ho conseguito anche l’abilitazione alle difese in Cassazione. <br /><br />
-            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, condomini e proprietari immobiliari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, piuttosto che offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone ad affrontare problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
-          </p>
-          <div className='flex flex-row justify-between '>
+          <h1 className="text-2xl sm:text-3xl text-center lg:text-left font-medium text-blue-900 mb-6 font-titolo tracking-wide ">
+              Avvocato Civilista a <b>Catania ed Enna</b>, esperto in <b>Diritto del Lavoro, Condominiale e Immobiliare</b>.
+            </h1>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Dal 2011 mi occupo di aiutare persone e famiglie a risolvere problemi concreti che riguardano la casa, il lavoro e la convivenza condominiale. Lo faccio attraverso un approccio chiaro, fondato su trasparenza, metodo e rispetto.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Conosco bene il peso che possono avere certe situazioni: <u>una busta paga mai saldata</u>, <u>un’infiltrazione ignorata da mesi</u>, <u>un licenziamento illegittimo</u>. Sono casi che non si risolvono con le promesse, ma con l’esperienza, la competenza e la capacità di guidare l’assistito nelle scelte più efficaci.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Non tutti i casi vanno portati in Tribunale. Il mio lavoro è anche capire quando conviene agire, e quando invece è preferibile trovare un’alternativa ragionevole, capace di tutelare diritti, equilibri e relazioni.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Il mio approccio parte da un principio semplice: <b>se una causa non ha basi solide, è mio dovere dirlo con chiarezza</b>, anche quando sarebbe più comodo fare il contrario. La fiducia si costruisce evitando false illusioni e offrendo soluzioni sensate, in linea con gli obiettivi dell’assistito.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed my-4">
+              <b>Credo che il compito di un avvocato non sia alimentare i conflitti, ma risolverli nel modo più efficace e sostenibile per chi si affida a lui</b>. Questo significa ascoltare, valutare, spiegare con onestà, scegliere la strada giusta e percorrerla con determinazione.
+            </p>
+          <div className='flex flex-row items-center justify-between mt-8 mx-4 '>
           <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm">Scopri chi sono →</Link>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
@@ -121,19 +134,32 @@ export default function HomePage() {
 
         <div className=" lg:w-1/2 text-left bg-white p-8 rounded-sm shadow-md flex flex-col justify-between lg:hidden " data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in" data-aos-duration="500" >
           <h2 className="font-titolo2 text-center lg:text-left text-3xl lg:text-4xl font-semibold text-blue-900 my-4">Io sono Giuseppe Auletta</h2>
-          <p className="text-gray-700 mb-6 ">
-            Avvocato civile esperto in <b>Diritto del Lavoro, Diritto Condominiale e degli Immobili a Catania ed Enna.</b> <br /><br />
-            Dal 2011, all’età di 28 anni, ho intrapreso ufficialmente la mia carriera da Avvocato Civilista. Nel 2022 ho conseguito anche l’abilitazione alle difese in Cassazione. <br /><br />
-            La mia passione per il diritto è nata al liceo: da rappresentante d’istituto, capii che conoscere le regole significava poterle usare per risolvere problemi reali e migliorare la vita degli altri. <br /><br />Oggi rappresento <b>lavoratori, condomini e proprietari immobiliari</b> per assicurare il rispetto dei loro diritti, offrendo un supporto mirato e trasparente che tuteli la loro stabilità e serenità quotidiana. <br /><br />Per me, la trasparenza avvocato-assistito non è uno slogan: se una causa non ha basi solide, lo dico subito. Anche se significa mettere da parte il mio interesse personale. Preferisco trovare alternative efficienti, piuttosto che offrire false speranze. <br /><br />La mia formazione è il frutto di passione e rigore, che mi hanno portato a laurearmi con 110 e lode. Con quello stesso spirito affronto ogni incarico, <b>per aiutare le persone ad affrontare problemi reali e a riprendersi ciò che è giusto.</b><br /><br />Dopo l’abilitazione professionale… 
-          </p>
-          <div className='flex flex-row justify-between '>
+          <h1 className="text-2xl sm:text-3xl text-center lg:text-left font-medium text-blue-900 mb-6 font-titolo tracking-wide ">
+              Avvocato Civilista a <b>Catania ed Enna</b>, esperto in <b>Diritto del Lavoro, Condominiale e Immobiliare</b>.
+            </h1>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Dal 2011 mi occupo di aiutare persone e famiglie a risolvere problemi concreti che riguardano la casa, il lavoro e la convivenza condominiale. Lo faccio attraverso un approccio chiaro, fondato su trasparenza, metodo e rispetto.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Conosco bene il peso che possono avere certe situazioni: <u>una busta paga mai saldata</u>, <u>un’infiltrazione ignorata da mesi</u>, <u>un licenziamento illegittimo</u>. Sono casi che non si risolvono con le promesse, ma con l’esperienza, la competenza e la capacità di guidare l’assistito nelle scelte più efficaci.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Non tutti i casi vanno portati in Tribunale. Il mio lavoro è anche capire quando conviene agire, e quando invece è preferibile trovare un’alternativa ragionevole, capace di tutelare diritti, equilibri e relazioni.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed mt-4">
+              Il mio approccio parte da un principio semplice: <b>se una causa non ha basi solide, è mio dovere dirlo con chiarezza</b>, anche quando sarebbe più comodo fare il contrario. La fiducia si costruisce evitando false illusioni e offrendo soluzioni sensate, in linea con gli obiettivi dell’assistito.
+            </p>
+            <p className="text-md text-gray-700 leading-relaxed my-4">
+              <b>Credo che il compito di un avvocato non sia alimentare i conflitti, ma risolverli nel modo più efficace e sostenibile per chi si affida a lui</b>. Questo significa ascoltare, valutare, spiegare con onestà, scegliere la strada giusta e percorrerla con determinazione.
+            </p>
+          <div className='flex flex-row items-center justify-between mt-4   '>
           <Link href="/chi-sono" className="text-blue-900 font-medium hover:underline text-xs md:text-sm ">Scopri chi sono →</Link>
           <button onClick={() => {     
           const phoneNumber = "393283744899";        
           const message = encodeURIComponent("Buongiorno, vorrei contattarla per un mio caso, potrei avere maggiori informazioni?");
           const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
           window.open(whatsappUrl, "_blank");
-        }} className='px-2 py-2 lg:px-4 lg:py-4 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
+        }} className='px-2 py-3 lg:px-4 lg:py-5 w-fit bg-white rounded-sm shadow border-2 border-blue-900 hover:border-white hover:bg-blue-950 hover:text-white text-blue-900 hover:scale-105 transition ease-in-out duration-400 cursor-pointer '>Richiedi consulenza</button>
           </div>
         </div>
       </section>
