@@ -109,7 +109,7 @@ export default function ChiSono() {
           - <b>Rispetto per le regole</b>, legali, deontologiche e fiscali;
         </p>
         <p className="text-md leading-relaxed mt-4">
-          - <b>hiarezza nelle valutazioni</b>, senza tecnicismi inutili;
+          - <b>Chiarezza nelle valutazioni</b>, senza tecnicismi inutili;
         </p>
         <p className="text-md leading-relaxed mt-4">
           - <b>Serietà e costanza</b>, perché ogni dettaglio può fare la differenza.
@@ -143,7 +143,7 @@ export default function ChiSono() {
           - <b>Rispetto per le regole</b>, legali, deontologiche e fiscali;
         </p>
         <p className="text-md leading-relaxed mt-4">
-          - <b>hiarezza nelle valutazioni</b>, senza tecnicismi inutili;
+          - <b>Chiarezza nelle valutazioni</b>, senza tecnicismi inutili;
         </p>
         <p className="text-md leading-relaxed mt-4">
           - <b>Serietà e costanza</b>, perché ogni dettaglio può fare la differenza.
