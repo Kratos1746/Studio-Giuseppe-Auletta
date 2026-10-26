@@ -168,7 +168,7 @@ export default function HomePage() {
             <section>
               <GoogleReviewsCarousel
               placeId="ChIJbZmQQMr9ExMRQoKwqfklKGg"
-              apiKey="AIzaSyCh2ZxYFQxijQjvctYWcAr3Kk10kxhDOns"
+              apiKey="AIzaSyBpRBr-A027AXJYGTPIx9eWCk8wX27S2U0"
               /> 
             </section>
       
