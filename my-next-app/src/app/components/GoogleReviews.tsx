@@ -28,45 +28,34 @@ export default function GoogleReviewsCarousel({
 }) {
   const [reviews, setReviews] = useState<GoogleReview[]>([])
 
-  useEffect(() => {
-    const loadReviews = () => {
-      const service = new window.google.maps.places.PlacesService(
-        document.createElement('div')
-      )
-      service.getDetails(
-        {
-          placeId,
-          fields: ['reviews'],
-        },
-        (place: any, status: any) => {
-          if (
-            status === window.google.maps.places.PlacesServiceStatus.OK &&
-            place?.reviews
-          ) {
-            const filteredReviews = place.reviews
-              .filter((r: GoogleReview) => r.rating >= 4)
-              .sort((a: GoogleReview, b: GoogleReview) => b.time - a.time)
-              .slice(0, 10)
-            setReviews(filteredReviews)
-          }
-        }
-      )
-    }
 
-    const isScriptLoaded = document.querySelector(
-      `script[src^="https://maps.googleapis.com/maps/api/js"]`
-    )
+useEffect(() => {
+  let cancelled = false
 
-    if (!window.google && !isScriptLoaded) {
-      const script = document.createElement('script')
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`
-      script.async = true
-      script.onload = loadReviews
-      document.head.appendChild(script)
-    } else if (window.google) {
-      loadReviews()
+  const loadReviews = async () => {
+    try {
+      const response = await fetch('/api/google-reviews')
+
+      if (!response.ok) {
+        throw new Error('Errore recupero recensioni')
+      }
+
+      const data = await response.json()
+
+      if (!cancelled) {
+        setReviews(data.reviews ?? [])
+      }
+    } catch (error) {
+      console.error('Errore Google Reviews:', error)
     }
-  }, [placeId, apiKey])
+  }
+
+  loadReviews()
+
+  return () => {
+    cancelled = true
+  }
+}, [placeId, apiKey])
 
   const settings = {
     dots: false,
